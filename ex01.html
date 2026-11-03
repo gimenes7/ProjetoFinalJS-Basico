@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Índice - Ferramentas Matemáticas</title>
+    <link rel="stylesheet" href="style.css">nk
+
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Índice — Ferramentas Matemáticas</h1>
+
+        </header>
+
+        <main>
+            <!-- Soma/Subtração/Multiplicação/Divisão -->
+            <section class="card" id="basic-arith">
+                <h2>Calculadora básica (2 números)</h2>
+                <div class="split">
+                    <div>
+                        <label>Número A</label>
+                        <input id="a1" type="number" step="any">
+                    </div>
+                    <div>
+                        <label>Número B</label>
+                        <input id="b1" type="number" step="any">
+                    </div>
+                </div>
+                <div style="margin-top:10px;display:flex;gap:8px;flex-wrap:wrap">
+                    <button onclick="calcBasic('+')">Somar</button>
+                    <button onclick="calcBasic('-')">Subtrair</button>
+                    <button onclick="calcBasic('*')">Multiplicar</button>
+                    <button onclick="calcBasic('/')">Dividir</button>
+                    <button class="secondary" onclick="clearSection('basic-arith')">Limpar</button>
+                </div>
+                <div id="basicRes" class="result mono"></div>
+            </section>
+
+            <!-- Média de 4 notas -->
+            <section class="card" id="media-notas">
+                <h2>Média aritmética - 4 notas (0 a 100)</h2>
+                <div class="split">
+                    <div>
+                        <label>Nota 1</label><input id="n1" type="number" min="0" max="100" step="any">
+                    </div>
+                    <div>
+                        <label>Nota 2</label><input id="n2" type="number" min="0" max="100" step="any">
+                    </div>
+                    <div>
+                        <label>Nota 3</label><input id="n3" type="number" min="0" max="100" step="any">
+                    </div>
+                    <div>
+                        <label>Nota 4</label><input id="n4" type="number" min="0" max="100" step="any">
+                    </div>
+                </div>
+                <div style="margin-top:8px"><button onclick="calcMedia()">Calcular média</button> <button
+                        class="secondary" onclick="clearSection('media-notas')">Limpar</button></div>
+                <div id="mediaRes" class="result"></div>
+            </section>
+
+            <!-- Perímetro retângulo -->
+            <section class="card" id="perimetro">
+                <h2>Perímetro de um retângulo</h2>
+                <div class="split">
+                    <div><label>Lado 1</label><input id="rL1" type="number" step="any" min="0"></div>
+                    <div><label>Lado 2</label><input id="rL2" type="number" step="any" min="0"></div>
+                </div>
+                <div style="margin-top:8px"><button onclick="calcPerimetro()">Calcular</button> <button
+                        class="secondary" onclick="clearSection('perimetro')">Limpar</button></div>
+                <div id="periRes" class="result"></div>
+            </section>
+
+            <!-- Área círculo -->
+            <section class="card" id="area-circ">
+                <h2>Área de um círculo</h2>
+                <label>Raio</label>
+                <input id="rc" type="number" step="any" min="0">
+                <div style="margin-top:8px"><button onclick="areaCirculo()">Calcular</button> <button class="secondary"
+                        onclick="clearSection('area-circ')">Limpar</button></div>
+                <div id="areaRes" class="result"></div>
+            </section>
+
+            <!-- Nome completo -->
+            <section class="card" id="nome-completo">
+                <h2>Nome completo</h2>
+                <div class="split">
+                    <div><label>Nome</label><input id="nome" type="text"></div>
+                    <div><label>Sobrenome</label><input id="sobrenome" type="text"></div>
+                </div>
+                <div style="margin-top:8px"><button onclick="nomeCompleto()">Exibir</button> <button class="secondary"
+                        onclick="clearSection('nome-completo')">Limpar</button></div>
+                <div id="nomeRes" class="result"></div>
+            </section>
+
+            <!-- Maior entre 4 inteiros -->
+            <section class="card" id="maior-4">
+                <h2>Maior entre 4 números inteiros</h2>
+                <div class="split">
+                    <div><label>Num 1</label><input id="m1" type="number" step="1"></div>
+                    <div><label>Num 2</label><input id="m2" type="number" step="1"></div>
+                    <div><label>Num 3</label><input id="m3" type="number" step="1"></div>
+                    <div><label>Num 4</label><input id="m4" type="number" step="1"></div>
+                </div>
+                <div style="margin-top:8px"><button onclick="maior4()">Encontrar maior</button> <button
+                        class="secondary" onclick="clearSection('maior-4')">Limpar</button></div>
+                <div id="maiorRes" class="result"></div>
+            </section>
+
+            <!-- Menor entre 5 inteiros -->
+            <section class="card" id="menor-5">
+                <h2>Menor entre 5 números inteiros</h2>
+                <div class="split" style="grid-template-columns:repeat(5,1fr);">
+                    <div><label>1</label><input id="s1" type="number" step="1"></div>
+                    <div><label>2</label><input id="s2" type="number" step="1"></div>
+                    <div><label>3</label><input id="s3" type="number" step="1"></div>
+                    <div><label>4</label><input id="s4" type="number" step="1"></div>
+                    <div><label>5</label><input id="s5" type="number" step="1"></div>
+                </div>
+                <div style="margin-top:8px"><button onclick="menor5()">Encontrar menor</button> <button
+                        class="secondary" onclick="clearSection('menor-5')">Limpar</button></div>
+                <div id="menorRes" class="result"></div>
+            </section>
+
+            <!-- Tabuada -->
+            <section class="card" id="tabuada">
+                <h2>Tabuada</h2>
+                <label>Número (inteiro)</label>
+                <input id="tabNum" type="number" step="1">
+                <div style="margin-top:8px"><button onclick="tabuada()">Gerar tabuada</button> <button class="secondary"
+                        onclick="clearSection('tabuada')">Limpar</button></div>
+                <div id="tabRes" class="result"></div>
+            </section>
+
+            <!-- Volume paralelepípedo -->
+            <section class="card" id="vol-paral">
+                <h2>Volume de um paralelepípedo</h2>
+                <div class="split">
+                    <div><label>Comprimento</label><input id="cp" type="number" step="any" min="0"></div>
+                    <div><label>Largura</label><input id="lp" type="number" step="any" min="0"></div>
+                    <div><label>Altura</label><input id="hp" type="number" step="any" min="0"></div>
+                </div>
+                <div style="margin-top:8px"><button onclick="volParal()">Calcular</button> <button class="secondary"
+                        onclick="clearSection('vol-paral')">Limpar</button></div>
+                <div id="volRes" class="result"></div>
+            </section>
+
+            <!-- Volume esfera -->
+            <section class="card" id="vol-esf">
+                <h2>Volume de uma esfera</h2>
+                <label>Raio</label>
+                <input id="re" type="number" step="any" min="0">
+                <div style="margin-top:8px"><button onclick="volEsfera()">Calcular</button> <button class="secondary"
+                        onclick="clearSection('vol-esf')">Limpar</button></div>
+                <div id="volERes" class="result"></div>
+            </section>
+
+            <!-- Calcular idade -->
+            <section class="card" id="idade">
+                <h2>Calcular idade</h2>
+                <label>Data de nascimento</label>
+                <input id="birth" type="date">
+                <label>Data atual (opcional)</label>
+                <input id="today" type="date">
+                <div style="margin-top:8px"><button onclick="calcIdade()">Calcular</button> <button class="secondary"
+                        onclick="clearSection('idade')">Limpar</button></div>
+                <div id="idadeRes" class="result"></div>
+            </section>
+
+            <!-- Verificar primo -->
+            <section class="card" id="primo">
+                <h2>Verificar número primo</h2>
+                <label>Número inteiro (>=2)</label>
+                <input id="pnum" type="number" step="1" min="0">
+                <div style="margin-top:8px"><button onclick="verificaPrimo()">Verificar</button> <button
+                        class="secondary" onclick="clearSection('primo')">Limpar</button></div>
+                <div id="primoRes" class="result"></div>
+            </section>
+
+            <!-- Mês por número -->
+            <section class="card" id="mes-num">
+                <h2>Mês por número (1-12)</h2>
+                <label>Escolha um número</label>
+                <input id="mes" type="number" min="1" max="12" step="1">
+                <div style="margin-top:8px"><button onclick="mesNome()">Exibir mês</button> <button class="secondary"
+                        onclick="clearSection('mes-num')">Limpar</button></div>
+                <div id="mesRes" class="result"></div>
+            </section>
+
+            <!-- Contracheque -->
+            <section class="card" id="contracheque">
+                <h2>Contracheque (descontos)</h2>
+                <label>Salário bruto (R$)</label>
+                <input id="salario" type="number" step="any" min="0">
+                <div style="margin-top:8px"><button onclick="calcularContra()">Calcular</button> <button
+                        class="secondary" onclick="clearSection('contracheque')">Limpar</button></div>
+                <div id="contraRes" class="result"></div>
+            </section>
+
+        </main>
+
+        <aside>
+            <h3 style="margin-top:0">Índice</h3>
+            <ul>
+                <li>Calculadora básica</li>
+                <li>Média de 4 notas</li>
+                <li>Perímetro / Área</li>
+                <li>Nome completo</li>
+                <li>Maior / Menor</li>
+                <li>Tabuada</li>
+                <li>Volume (paral./esfera)</li>
+                <li>Idade, primo, mês</li>
+                <li>Contracheque</li>
+            </ul>
+            <p class="small">Observações:</p>
+            <p class="small">Validações básicas incluídas — campos numéricos, intervalos e tratamento de vazios.</p>
+        </aside>
+
+
+    </div>
+    <script src="ex.js"></script>
+
+</body>
+
+</html>
